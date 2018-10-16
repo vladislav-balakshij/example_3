@@ -1,0 +1,69 @@
+@include b('shadow'){
+	position: relative;
+	padding: 30px 15px;
+	box-shadow: 0px 13px 50px 0px rgba(0, 0, 0, 0.2);
+	background-color: #fff;
+	color: $color-general;
+	font-size: 16px;
+	z-index: 1;
+	@include m('background'){
+		overflow: hidden;
+		@include margin-x(-15px);
+		&:before{
+			@include pseudo();
+			right: -100px;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: z-index('below');
+		}
+		&-ukraine-map{
+			&:before{
+				@include size(500px, 340px);
+				@include bg('../img/ukraine-map.png');
+			}
+			@include min(sm){
+				&:before{
+					right: -150px;
+					@include size(804px, 553px);
+					@include bg('../img/ukraine-map-1.png');
+				}
+			}
+		}
+		&-poland-arms{
+			&:before{
+				@include bg('../img/poland-arms.png');
+			}
+			@include min(sm){
+				&:before{
+					@include size(622px, 677px);
+				}
+			}
+		}
+	}
+	@include e('header'){
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	@include e('title'){
+		font-family: 'FormularBold';
+	}
+	@include e('subtitle'){
+		margin-bottom: 15px;
+		font-size: 21px;
+	}
+	@include e('content'){
+		@include padding-x(10px);
+	}
+	&_large{
+		padding: 45px 15px;
+		@include min(md){
+			padding-top: 60px;
+			padding-bottom: 90px;
+		}
+	}
+	&_large &{
+		@include e('header'){
+			margin-bottom: 60px;
+		}
+	}
+}

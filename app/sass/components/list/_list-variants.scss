@@ -1,0 +1,33 @@
+@include b('list'){
+	&_check{
+		li{
+			padding-left: 30px;
+			&:not(:last-child){
+				margin-bottom: 10px;
+			}
+			&:after{
+				top: 5px;
+				left: 0;
+				@include bg('../img/list-check.png');
+				@include size(19px, 17px);
+			}
+		}
+	}
+	&_flag{
+		li{
+			padding-left: 35px;
+			&:nth-child(odd){
+				font-family: 'FormularBold';
+			}
+			&:not(:last-child){
+				margin-bottom: 5px;
+			}
+			&:after{
+				top: 5px;
+				left: 0;
+				@include bg('../img/list-flag.png');
+				@include size(21px, 23px);
+			}
+		}
+	}
+}

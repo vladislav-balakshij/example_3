@@ -1,0 +1,11 @@
+include ../bem/index
+include ../helpers/config
+
++b.FOOTER.site-footer
+	+e.container.container
+		+e.row.row
+			+e.logo.col-12.col-sm-2
+				img(src="img/logo.png")
+			+e.info.col-12.col-sm-10
+				+e.BUTTON.link(data-action="v-modal" data-open="#modal-politic") Политика конфиденциальности
+				+e.BUTTON.link(data-action="v-modal" data-open="#modal-otkaz") Отказ от ответственности

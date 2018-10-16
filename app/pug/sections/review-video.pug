@@ -1,0 +1,12 @@
+include ../bem/index
+include ../helpers/config
+include ../helpers/mixins
++b.SECTION.benefits._children
+	+quadro('_style-1 benefits__quadro_1')
+	+quadro('_style-2 benefits__quadro_2')
+	.v-container
+		+b.H3.title-md.title-section Что говорят сами дети об учебе в Польше
+		+e.video
+			+e.IFRAME.video-iframe(src="https://www.youtube.com/embed/F_JdFqhtoTY?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen)
+		+b.text-center
+			+b.BUTTON.btn._size-lg._brand-1._shadow-brand-1.effect._bounce-top(data-action="v-modal" data-open="#modal-form") Задать вопросы специалисту

@@ -1,0 +1,64 @@
+include data
+
+mixin css(src)
+	link(href=src rel="stylesheet")
+mixin js(src)
+	script(src=src)
+
+mixin add-meta(title, description, url, image)
+	if title
+		title=title
+		meta(name="application-name" content=title)
+		meta(property="og:title" content=title)
+		meta(itemprop="headline" content=title)
+		meta(property="og:site_name" content=title)
+	if description
+		meta(itemprop="description" content=description)
+		meta(property="og:description" content=description)
+	if url
+		meta(property="og:url" content=url)
+		meta(property="og:type" content="website")
+	if image
+		meta(property="og:image" content=image)
+		meta(itemprop="image" content=image)
+
+mixin menu-item(isLink,href, name)
+
+	- var menuItemClass = '';
+	if wordpress
+		- menuItemClass = 'menu-item';
+	else
+		- menuItemClass = themePrefix + themeNav + '__menu-item'; 
+
+	li(class=menuItemClass)
+		if isLink === 'true'
+			a( data-scroll href=href )=name
+		else
+			block
+
+mixin icon(classname, img, title)
+	+b.icon(class=classname)
+		+e.inner
+			+e.header
+				+e.img(src=img)
+				if title
+					+e.P.title=title
+			+e.body
+				block
+
+mixin review(wrapper, name, country, img)
+	+b.review-item(class=wrapper)
+		if block
+			+e.content
+				block
+		+e.footer
+			+e.image
+				img(src=img)
+			+e.info
+				p=name
+				p=country
+
+mixin quadro(classname)
+	+b.quadro(class=classname)
+		- for(var i = 1; i <= 9; i++)
+			+e.SPAN.part(class="_" + i)

@@ -1,0 +1,25 @@
+/// Clearfix.
+@mixin cf(){
+	&:after, &:before{
+		content: "";
+		display: table;
+	}
+	&:after{
+		clear: both;
+	}
+}
+
+@if getComp(flex) == true{
+	@include b('flex'){
+		display: flex;
+		flex: 0 1 auto;
+		flex-flow: row wrap;
+		&_y-center{
+			align-items: center;
+		}
+	}
+	@include b('row'){
+		@include margin-x( - getComp(gutter) );
+		@extend .#{$themePrefix}flex;
+	}
+}

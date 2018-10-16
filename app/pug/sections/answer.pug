@@ -1,0 +1,35 @@
+include ../bem/index
+include ../helpers/config
+include ../helpers/mixins
++b.SECTION.answer
+	.v-container
+		+e.content.offset-static-md
+			+e.item.row
+				+e.item-column._image.col-12.col-sm-5
+					+e.item-image(src="img/answer-1.svg")
+				+e.item-column._text.col-12.col-sm-7
+					+e.H3.item-title.title-md
+						| На сайте школы может быть 
+						+b.SPAN.color-brand-2 устаревший список 
+						| документов
+					+b.text
+						p Представьте - Вы всё собрали, приехали в школу, а там говорят: 
+						p “Справка – не такая, оценки должны быть за другие периоды, а этот документ нужно было переводить у уполномоченного переводчика”...
+						p Потратили время, деньги, кучу нервов и, скорее всего, отложили поступление на 1 год.
+			+e.item.row
+				+e.item-column._image.col-12.col-sm-5
+					+e.item-image(src="img/answer-2.svg")
+				+e.item-column._text.col-12.col-sm-7
+					+e.H3.item-title.title-md
+						| Поступили -
+						br
+						+b.SPAN.color-brand-2 не значит 
+						| поселились
+					+b.text
+						p Часто бывает еще и другое.
+						p Вы отправили документы, сдали тесты. Получили письмо что зачислены, всё хорошо. 
+						p Приехали в школу и вдруг оказывается… что для Вас нет места в общежитии!
+						p Начинаются слезы, мольбы… а потом наступает разочарование.
+						p А всё потому, что не занялись этим вопросом заранее.
+		+b.text-center
+			+b.BUTTON.btn._size-lg._brand-1._shadow-brand-1.effect._bounce-top(data-action="v-modal" data-open="#modal-form") Задать вопросы специалисту

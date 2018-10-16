@@ -1,0 +1,40 @@
+include ../bem/index
+include ../helpers/config
++b.SECTION.section.bonus__
+	.v-container
+		+b.H3.title-md.title-section
+			span.v-color-brand-2 Получите бонус 
+			| за быструю заявку
+		.v-row
+			.v-col-12.v-col-sm-5.v-col-md-4
+				+e.img
+					img(src="img/bonus.png")
+			.v-col-12.v-col-sm-7.v-col-md-8
+				+e.content
+					p.v-offset-static-xs.bold
+						| Оставьте заявку в течении 10 минут и 
+						span.v-color-brand-2 получите бесплатное руководство 
+						| с ответами на популярные вопросы
+					+b.UL.list._flag
+						li Реально ли среднее образование в Польше доступно и почему?
+						li Какие нюансы стоит учесть перед отправкой ребенка на учебу?
+						li Где ребенок будет жить, как питаться? Сколько это стоит в месяц?
+						li Как быстрее всего выучить польский язык?
+						li Есть ли вступительные экзамены? Какие?
+						li Что делать, если ребенок заболел?
+				.v-row
+					.v-col-12.v-col-md-6
+						#timerContainer
+					.v-col-12.v-col-md-6
+						+b.shadow
+							+e.content
+								+b.FORM.form._block(action="mail.php" method="POST")
+									+e.content
+										+e.row
+											+e.INPUT.control(name="vname" type="text" placeholder="Ваше имя")
+										+e.row
+											+e.INPUT.control(name="vemail" type="email" placeholder="Ваш email")
+										+e.row
+											+e.INPUT.control(name="vphone" type="tel" placeholder="Ваш телефон")
+										+e.row
+											+e.BUTTON.submit.btn._brand-1._shadow-brand-1._size-lg._size-fluid.effect._bounce-top(type="submit") Получить руководство

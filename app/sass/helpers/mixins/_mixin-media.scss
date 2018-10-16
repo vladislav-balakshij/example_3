@@ -1,0 +1,35 @@
+////
+/// @author Vsevolod Kurochka
+/// @group Responsive Manager
+/// @param {String} $breakpoint - Breakpoint
+////
+
+/// Responsive manager
+@mixin min($breakpoint){
+	// If the key exists in the map
+	@if map-has-key($breakpoints, $breakpoint) {
+		// Prints a media query based on the value
+		@media (min-width: map-get($breakpoints, $breakpoint) ) {
+			@content;
+		}
+	}
+	// If the key doesn't exist in the map
+	@else {
+		@error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+	}
+}
+
+/// Responsive manager
+@mixin max($breakpoint){
+	// If the key exists in the map
+	@if map-has-key($breakpoints, $breakpoint) {
+		// Prints a media query based on the value
+		@media (max-width: map-get($breakpoints, $breakpoint) - 1px ) {
+			@content;
+		}
+	}
+	// If the key doesn't exist in the map
+	@else {
+		@error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+	}
+}

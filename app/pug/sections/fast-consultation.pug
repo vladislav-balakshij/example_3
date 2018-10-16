@@ -1,0 +1,18 @@
+include ../bem/index
+include ../helpers/config
+include ../helpers/mixins
+- var iconClass = '_center v-col-12 v-col-sm-4';
++b.SECTION.consultation
+	.v-container
+		+b.shadow._large._background._background-poland-arms
+			+e.header
+				+e.H3.title.title-md 
+					| Наша консультация - самый быстрый способ<br>
+					span.v-color-brand-2 узнать всё об учебе в Польше
+			.v-row
+				+icon(iconClass, 'img/icon-study-4.png', null)
+					| <span class="bold">Не нужно никуда ехать</span>, даже если Вы хотите подать документы. Собеседования проведем по телефону или Скайпу, а документы отправим по почте
+				+icon(iconClass, 'img/icon-study-5.png', null)
+					| <span class="bold">Работаем только официально</span>, подписываем прозрачный договор
+				+icon(iconClass, 'img/icon-study-6.png', null)
+					| <span class="bold">Гарантируем поступление ребенка в выбранную школу</span>. Если не получилось - возвращаем деньги

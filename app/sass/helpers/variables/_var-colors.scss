@@ -1,0 +1,35 @@
+////
+/// @type color
+/// @group color
+/// @author Vsevolod Kurochka
+////
+
+/// Color general
+$color-general: #000000;
+
+/// Color Black
+$color-black: #000;
+
+/// Color White
+$color-white: #fff;
+
+/// Color Branding One
+$color-brand-1: #ff911b;
+
+/// Color Branding Two
+$color-brand-2: #0057a2;
+
+/// Color Branding Three
+$color-brand-3: #8ac5ff;
+
+/// Color Success
+$color-success: #5cb85c;
+
+/// Color Danger
+$color-danger: #d9534f;
+
+/// Color of Responsive Menu
+$color-responsive-menu: $color-brand-2;
+
+/// Color of li
+$color-responsive-menu-light: lighten($color-responsive-menu, 5%);

@@ -1,0 +1,25 @@
+.#{$themePrefix}text{
+	p{
+		&:not(:last-child){
+			margin-bottom: 15px;
+		}
+	}
+	&-uppercase{
+		text-transform: uppercase;
+	}
+	&-underline{
+		text-decoration: underline;
+	}
+	&-decoration-none{
+		text-decoration: none;
+	}
+	&-center{
+	 text-align: center;
+	}
+	&-left{
+	 text-align: left;
+	}
+	&-right{
+	 text-align: right;
+	}
+}

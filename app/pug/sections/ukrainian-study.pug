@@ -1,0 +1,16 @@
+include ../bem/index
+include ../helpers/config
+include ../helpers/mixins
++b.SECTION.section.study
+	.v-container
+		+b.shadow._large._ukraine-map
+			+e.header
+				+e.P.subtitle Мы движемся в Европу и всё такое…
+				+e.H3.title.title-md Но пока <span class="v-color-brand-2">украинское образование</span> - это:
+			.v-row
+				+icon('_center v-col-12 v-col-sm-4', 'img/icon-study-1.png', null)
+					| <span class="bold">Сплошная теория</span>, которая безнадежно устарела еще 15 лет назад
+				+icon('_center v-col-12 v-col-sm-4', 'img/icon-study-2.png', null)
+					| <span class="bold">Диплом</span>, который НЕ дает возможности работать где-то, кроме Украины
+				+icon('_center v-col-12 v-col-sm-4', 'img/icon-study-3.png', null)
+					| <span class="bold">Коррупция</span>, взяточничество и бюрократия в чистом виде

@@ -1,0 +1,18 @@
+@include b('fixed'){
+	position: fixed;
+	width: 100%;
+	left: 0;
+	z-index: z-index('fixed');
+	@include max(md){
+		& + .site{
+			margin-top: 56px;
+		}
+	}
+	@include min(md){
+		&_md{
+			&-top{
+				top: 0;
+			}
+		}
+	}
+}

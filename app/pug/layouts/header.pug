@@ -1,0 +1,43 @@
+include ../bem/index
+include ../helpers/config
+include ../helpers/mixins
++b.HEADER.site-header
+	+quadro('_style-1 site-header__quadro')
+	.v-container
+		+e.row.row
+			.v-col-12.v-col-sm-7
+				+e.H1.title.title-lg
+					|Среднее
+					br
+					|образование в 
+					+e.SPAN.title-flag Польше
+				+e.description
+					+e.P.description-title Поможем Вашему ребенку поступить в престижную польскую школу, лицей или техникум, после которого он сможет:
+					+e.description-content
+						+e.description-content-inner
+							+b.UL.list._check
+								li Стать студентом рейтингового Европейского вуза
+								li Остаться жить и работать в Европе или
+								li Вернуться востребованным специалистом в Украину
+							+e.description-footer
+								p
+									span.v-color-brand-3 * 
+									|9 из 10 детей наших клиентов остаются жить в Европе после окончания лицея или техникума в Польше
+			+e.column._form.col-12.col-sm-5.col-md-4
+				+b.shadow
+					+e.header
+						+e.P.title
+							| Запишитесь на 
+							span.v-color-brand-2 бесплатную консультацию 
+							| и мы предварительно оценим шансы Вашего ребенка на поступление
+					+e.content
+						+b.FORM.form._block(action="mail.php" method="POST")
+							+e.content
+								+e.row
+									+e.INPUT.control(name="vname" type="text" placeholder="Ваше имя")
+								+e.row
+									+e.INPUT.control(name="vemail" type="email" placeholder="Ваш email")
+								+e.row
+									+e.INPUT.control(name="vphone" type="tel" placeholder="Ваш телефон")
+								+e.row
+									+e.BUTTON.submit.btn._brand-1._shadow-brand-1._size-fluid.effect._bounce-top(type="submit") Проконсультироваться<br>бесплатно

@@ -1,0 +1,25 @@
+@include b($themeNav){
+	@include e('menu'){
+		-webkit-overflow-scrolling:touch;
+		@include max(md){
+			transform: translateZ(0) translateX(-120%);
+			position: fixed;
+			left: 0;
+			width: 270px;
+			height: 100%;
+			padding: 0 0 100px 0;
+			top: 56px;
+			z-index: z-index('default');
+			overflow-y: auto;
+			@include transition();
+			background-color: $color-responsive-menu;
+			&.active{
+				transform: none;
+			}
+		}
+		@include min(md){
+			color: #fff;
+			text-align: right;
+		}
+	}
+}

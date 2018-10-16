@@ -1,0 +1,81 @@
+@include b('form'){
+	$self: &;
+	width: 100%;
+	&__row{
+		#{$self}_block &{
+			@include rowOffset();
+		}
+	}
+	@include max(sm){
+		&__row{
+			#{$self}_line &{
+				@include rowOffset();
+			}
+		}
+	}
+	@include min(sm){
+		#{$self}_line &{
+			&__content{
+				display: flex;
+				justify-content: center;
+				margin-left: - getComp(gutter);
+				margin-right: - getComp(gutter);
+			}
+			&__row{
+				flex: 1;
+				padding-left: getComp(gutter);
+				padding-right: getComp(gutter);
+			}
+			&__submit{
+				@include size(100%);
+			}
+		}
+	}
+	@if( $themeFormDesign == 'new' ){
+		&__control{
+			@include input-default();
+			border: none;
+		}
+		&__line{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			@include size(0, 1px);
+			background-color: $color-brand-1;
+			@include transition();
+		}
+		input:focus + &__line{
+			width: 100%;
+		}
+		&__row_line{
+			&:before{
+				@include pseudo();
+				left: 0;
+				bottom: 0;
+				height: 1px;
+				width: 100%;
+				background-color: $color-brand-1;
+			}
+		}
+		@include min(xs){
+			&__row{
+				margin-top: 30px;
+			}
+		}	
+	}@else{
+		&__control{
+			@include input-default();
+			border: 2px solid #e6e6e6;
+			&:focus{
+				border-color: $color-brand-1;
+				@include placeholder{
+					color: transparent;
+				}
+			}
+		}
+	} 
+
+}
+[type="submit"]{
+	cursor: pointer;
+}

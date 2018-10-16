@@ -1,0 +1,25 @@
+$themeFormDesign: 'old';
+
+@mixin input-default(){
+	display: block;
+	padding: 15px;
+	width: 100%;
+	max-width: 100%;
+	color: $color-general;
+	text-align: center;
+	font-size: 15px;
+	font-family: 'FormularBold';
+	font-style: italic;
+	-webkit-appearance: none;
+	outline: none;
+	@include transition();
+	@include placeholder{
+		@include transition();
+	}
+}
+@mixin rowOffset(){
+	margin-bottom: 7.5px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}

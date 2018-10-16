@@ -1,0 +1,123 @@
+@include b('icon'){
+	&_center{
+		text-align: center;
+		@include max(sm){
+			&:not(:last-child){
+				margin-bottom: 30px;
+			}
+		}
+	}
+	&_center &{
+		@include e('inner'){
+			@include min(md){
+				@include padding-x(30px);
+			}
+		}
+		@include e('header'){
+			margin-bottom: 15px;
+			@include min(sm){
+				margin-bottom: 45px;
+			}
+		}
+		@include e('img'){
+			height: 90px;
+		}
+	}
+	@include e('title'){
+		font-family: 'FormularBold';
+		font-size: 19px;
+		line-height: 1.1;
+	}
+	&_left{
+		margin-bottom: 30px;
+		@include min(md){
+			margin-bottom: 45px;
+		}
+	}
+	&_left &{
+		@include e('header'){
+			margin-bottom: 15px;
+		}
+		@include e('img'){
+			height: 60px;
+		}
+		
+		@include min(md){
+			@include e('header'){
+				display: flex;
+				flex-flow: row wrap;
+				align-items: center;
+			}
+			@include e('title'){
+				flex-grow: 1;
+				flex-basis: 0;
+				padding-left: 15px;
+			}
+		}
+		@include min(lg){
+			@include e('title'){
+				font-size: 21px;
+				padding-right: 30px;
+			}
+		}
+	}
+	&_left-icon{
+		margin-bottom: 45px;
+		@include min(sm){
+			margin-bottom: 90px;
+		}
+	}
+	&_left-icon &{
+		@include e('inner'){
+			position: relative;
+		}
+		@include e('img'){
+			height: 90px;
+		}
+		@include e('title'){
+			font-size: 30px;
+			margin-bottom: 10px;
+		}
+		@include min(sm){
+			@include e('inner'){
+				min-height: 140px;
+			}
+			@include e('img'){
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 90px;
+			}
+			@at-root{
+				%left-icon-padding{
+					padding-left: 110px;
+				}
+			}
+			@include e('title'){
+				@extend %left-icon-padding;
+				font-size: 30px;
+			}
+			@include e('body'){
+				@extend %left-icon-padding;
+			}
+		}
+		@include min(md){
+			@include e('img'){
+				height: 140px;
+			}
+			@at-root{
+				%left-icon-padding{
+					padding-left: 180px;
+				}
+			}
+			@include e('title'){
+				@extend %left-icon-padding;
+				font-size: 45px;
+			}
+			@include e('body'){
+				@extend %left-icon-padding;
+			}
+		}
+	}
+}

@@ -1,0 +1,74 @@
+$quadro-size: 102px;
+$quadro-size_md: 204px;
+@include b('quadro'){
+	display: flex;
+	flex-flow: row wrap;
+	@include absolute();
+	@include size($quadro-size);
+	@include e('part'){
+		@include size($quadro-size / 3);
+	}
+	background-color: transparent;
+	@include min(md){
+		@include size($quadro-size_md);
+		@include e('part'){
+			@include size($quadro-size_md / 3);
+		}
+	}
+	&_style-1 &{
+		@include e('part'){
+			@include m('3'){
+				background-color: $color-brand-3;
+			}
+			@include m('5'){
+				background-color: $color-brand-2;
+			}
+			@include m('7'){
+				background-color: $color-brand-3;
+			}
+		}
+	}
+	&_style-2 &{
+		@include e('part'){
+			@include m('3'){
+				background-color: $color-brand-2;
+			}
+			@include m('5'){
+				background-color: $color-brand-2;
+			}
+			@include m('7'){
+				background-color: $color-brand-3;
+			}
+		}
+	}
+	&_style-3 &{
+		@include e('part'){
+			@at-root{
+				%style-3-brand-2{
+					background-color: $color-brand-2;
+				}
+				%style-3-brand-3{
+					background-color: $color-brand-3;
+				}
+			}
+			@include m('1'){
+				@extend %style-3-brand-2;
+			}
+			@include m('2'){
+				@extend %style-3-brand-2;
+			}
+			@include m('4'){
+				@extend %style-3-brand-2;
+			}
+			@include m('3'){
+				@extend %style-3-brand-3;
+			}
+			@include m('5'){
+				@extend %style-3-brand-3;
+			}
+			@include m('7'){
+				@extend %style-3-brand-3;
+			}
+		}
+	}
+}

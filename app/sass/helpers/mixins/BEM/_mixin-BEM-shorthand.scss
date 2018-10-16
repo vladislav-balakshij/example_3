@@ -1,0 +1,36 @@
+////
+/// @group bem-shorthand
+/// @author Vsevolod Kurochka
+////
+
+/// Shorthand for `block`	
+/// @param {String} $name - Block class
+@mixin b($name){
+	@include block($name){
+		@content;
+	}
+}
+
+/// Shorthand for `element`
+/// @param {String} $name - Element class
+@mixin e($name){
+	@include element($name){
+		@content;
+	}
+}
+
+/// Shorthand for `el-of-el`
+/// @param {String} $name - Element of element classname
+@mixin ee($name){
+	@include el-of-el($name){
+		@content;
+	}
+}
+
+/// Shorthand for `el-of-el`
+/// @param {String} $name - Element of element classname
+@mixin m($name){
+	@include mod($name){
+		@content;
+	}
+}

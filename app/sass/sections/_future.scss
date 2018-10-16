@@ -1,0 +1,73 @@
+@include b('future'){
+	position: relative;
+	z-index: 1;
+	padding-top: 30px;
+	margin-bottom: -15px;
+	@include e('column'){
+		@include m('text'){
+			@include min(sm){
+				padding-bottom: 140px;
+				&-small{
+					padding-bottom: 75px;
+				}
+			}
+		}
+		@include m('image'){
+			position: relative;
+			font-size: 0;
+			@include max(sm){
+				margin-top: 30px;
+			}
+			@include min(sm){
+				align-self: flex-end;
+			}
+		}
+	}
+	@include e('img'){
+		@include max(sm){
+			max-width: 175px;
+		}
+	}
+	@include e('icon'){
+		position: absolute;
+		color: $color-brand-3;
+		font-family: 'FormularBold';
+		font-size: 75px;
+		line-height: 1;
+		@include min(sm){
+			font-size: 170px;
+		}
+		@include mod('1'){
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		@include mod('2'){
+			bottom: 30px;
+			left: 0;
+			filter: blur(5px);
+			@include min(sm){
+				left: -30px;
+				font-size: 120px;
+			}
+		}
+		@include m('3'){
+			top: 0;
+			left: 30px;
+		}
+		@include m('4'){
+			left: calc(50%);
+			filter: blur(5px);
+			font-size: 100px;
+			@include min(sm){
+				left: calc(50% + 75px);
+			}
+		}
+	}
+}
+.test{
+	rect,
+	path{
+		color: #ddd;
+	}
+}

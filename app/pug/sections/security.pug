@@ -1,0 +1,36 @@
+include ../bem/index
+include ../helpers/config
++b.SECTION.security#section-consultation
+	.v-container
+		+b.H3.title-md.title-section Безопасность Вашего ребенка - прежде всего
+		+e.IMG.image(src="img/icon-security.png")
+		+e.row.row
+			+e.column._text.col-12.col-sm-6
+				+b.H4.title-sm.offset-static-xs 
+					span.v-color-brand-2 Что Вы узнаете 
+					| на бесплатной консультации
+				+b.UL.list._flag
+					li Как выбрать идеальную школу для своего ребенка?
+					li Школы каких направлений есть в Польше?
+					li Школа в мегаполисе или в небольшом городе: куда лучше и безопаснее отправлять ребенка?
+					li Нужна ли ребенку виза и какая? Нужны ли визы Вам, чтобы навещать его?
+					li Во сколько обойдется поступление и 1 месяц жизни в Польше для ребенка?
+					li Как предусмотреть болезнь ребенка или несчастный случай, без необходимости срочно мчаться в Польшу?
+					li «Мой ребенок неважно учится, есть ли у него шансы поступить?»
+					li Как быть с польским языком? На каком уровне нужно его знать, чтобы комфортно учиться?
+			+e.column._form.col-12.col-sm-6.col-md-4
+				+b.shadow
+					+e.header
+						+e.P.title
+							| Оставьте заявку и мы проконсультируем Вас по всем нюансам поступления
+					+e.content
+						+b.FORM.form._block(action="mail.php" method="POST")
+							+e.content
+								+e.row
+									+e.INPUT.control(name="vname" type="text" placeholder="Ваше имя")
+								+e.row
+									+e.INPUT.control(name="vemail" type="email" placeholder="Ваш email")
+								+e.row
+									+e.INPUT.control(name="vphone" type="tel" placeholder="Ваш телефон")
+								+e.row
+									+e.BUTTON.submit.btn._brand-1._shadow-brand-1._size-fluid.effect._bounce-top(type="submit") Проконсультироваться<br>бесплатно

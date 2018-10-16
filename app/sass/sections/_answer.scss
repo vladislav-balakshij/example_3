@@ -1,0 +1,28 @@
+@include b('answer'){
+	@include padding-y(150px, 45px);
+	@include e('item'){
+		&:not(:last-child){
+			margin-bottom: 45px;
+		}
+		@include ee('title'){
+			margin-bottom: 30px;
+		}
+		&-column{
+			&_image{
+				text-align: center
+			}
+		}
+		@include ee('image'){
+			width: 80%;
+		}
+		@include min(sm){
+			&:not(:last-child){
+				margin-bottom: 90px;
+			}
+			align-items: center;
+			&:nth-child(odd){
+				flex-direction: row-reverse;
+			}
+		}
+	}
+}

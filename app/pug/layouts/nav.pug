@@ -1,0 +1,23 @@
+include ../bem/index
+include ../helpers/config
+include ../helpers/data
+include ../helpers/mixins
++b.fixed._md-top
+	+b.nav._style#js-wrapper-navigation
+		+e.container.container
+			+e.row.row.flex_y-center
+				+e.logo.col-8.col-md-2
+					+b.hamburger._effect-1(type="button" id="js-vnav__btn")
+						+e.SPAN.lines
+							span Line1
+							span Line2
+							span Line3
+						//+e.SPAN.text Menu
+					+e.logo-content
+						+e.logo-content-img(src="img/logo.png" alt="")
+				+e.NAV.menu.col-12.col-md-10#js-navigation
+					for item in navigation
+						+e.LI.menu-item
+							a(href=item.link)=item.name
+					+e.LI.menu-item
+						+b.BUTTON.btn._navigation.effect._bounce-top(data-action="v-modal" data-open="#modal-form") Записаться на консультацию

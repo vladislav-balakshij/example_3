@@ -1,0 +1,117 @@
+@include b('contact'){
+	position: relative;
+	z-index: z-index('default');
+	@include padding-y(#{$quadro-size / 3}, null);
+	@include max(sm){
+		margin-top: 150px;
+	}
+	@include min(sm){
+		@include padding-y(200px);
+	}
+
+	@include e('map'){
+		@include max(sm){
+			height: 500px;
+			width: 100%;
+		}
+		@include min(sm){
+			position: absolute;
+			left: 0;
+			top: 0;
+			@include size(100%);
+		}
+	}
+
+	@include e('info'){
+		position: relative;
+		z-index: z-index('default');
+		background-color: #fff;
+		padding: 30px;
+		
+	
+		@include min(sm){
+			width: 450px;
+			margin-left: 10%;
+		}
+
+		@include ee('title'){
+			font-family: 'FormularBold';
+			font-size: 22px;
+			margin-bottom: 30px;
+			line-height: 1.1;
+			@include min(sm){
+				font-size: 36px;
+			}
+		}
+		
+		@include ee('part'){
+			position: relative;
+			padding-left: 30px;
+
+			&:before{
+				@include pseudo();
+			}
+
+			&:not(:last-child){
+				margin-bottom: 30px;
+			}
+
+			@include min(sm){
+				padding-left: 70px;
+			}
+
+			@include m('phone'){
+				&:before{
+					top: 0;
+					left: 0;
+					@include size(25px);
+					@include bg('../img/phone.svg');
+					@include min(sm){
+						@include size(50px);
+					}
+				}
+			}
+
+			@include m('email'){
+				&:before{
+					top: 50%;
+					left: 0;
+					transform: translateY(-50%);
+					@include size(25px);
+					@include bg('../img/email.svg');
+					@include min(sm){
+						@include size(46px, 41px);
+					}
+				}
+			}
+
+		}
+
+		@include ee('link'){
+			display: block;
+			text-decoration: none;
+			color: $color-brand-2;
+			font-family: 'FormularBold';
+			@include transition();
+			&:hover{
+				color: $color-brand-3;
+			}
+			@include min(md){
+				font-size: 24px;
+			}
+		}
+		
+	}
+
+	@include e('quadro'){
+		@include m('2'){
+			bottom: calc(100% - #{$quadro-size / 3});
+			right: 0;
+			z-index: z-index('default');
+			@include min(md){
+				bottom: calc(100% - #{$quadro-size_md / 3});
+			}
+		}
+	}
+
+}

@@ -1,0 +1,16 @@
+.#{$themePrefix}color{
+  &-brand{
+    &-1{
+      color: $color-brand-1;
+    }
+    &-2{
+      color: $color-brand-2;
+    }
+    &-3{
+      color: $color-brand-3;
+    }
+  }
+  &-black{
+    color: $color-black;
+  }
+}

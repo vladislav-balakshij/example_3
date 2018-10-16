@@ -1,0 +1,55 @@
+@include b('benefits'){
+	position: relative;
+	@include padding-y(90px, 65px);
+	color: $color-white;
+	@include m('organization'){
+		@include bg('../img/bg-benefit.jpg');
+	}
+	@include m('result'){
+		@include bg('../img/bg-benefit-result.jpg');
+	}
+	@include m('children'){
+		@include bg('../img/bg-benefit-children.jpg');
+	}
+	@media screen{
+		@include min(md){
+			background-attachment: fixed;
+		}
+	}
+	&:before{
+		@include pseudo();
+		left: 0;
+		top: 0;
+		@include size(100%);
+		background-color: transparentize($color-black, 0.4);
+	}
+	@include e('quadro'){
+		@include m('1'){
+			top: calc(100% - #{$quadro-size / 3});
+			left: 0;
+			@include min(md){
+				top: calc(100% - #{$quadro-size_md / 3});
+			}
+		}
+		@include m('2'){
+			bottom: calc(100% - #{$quadro-size / 3});
+			right: 0;
+			@include min(md){
+				bottom: calc(100% - #{$quadro-size_md / 3});
+			}
+		}
+	}
+	@include e('video'){
+		text-align: center;
+		margin-bottom: 45px;
+		@include ee('iframe'){
+			display: inline-block;
+			height: 300px;
+			width: 100%;
+			@include min(sm){
+				width: 650px;
+				height: 350px;
+			}
+		}
+	}
+}

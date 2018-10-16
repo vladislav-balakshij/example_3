@@ -1,0 +1,26 @@
+@include b('security'){
+	position: relative;
+	@include padding-y(50px, 50px);
+	@include min(md){
+		@include padding-y(75px, 75px);
+	}
+	@include e('row'){
+		@include min(sm){
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+	@include e('image'){
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	@include e('column'){
+		@include m('text'){
+			@include max(sm){
+				margin-bottom: 30px;
+			}
+		}
+	}
+}

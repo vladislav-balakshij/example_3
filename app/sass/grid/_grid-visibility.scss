@@ -1,0 +1,41 @@
+/* -----------------------------------------------------------------------------
+	HIDDEN AND VISIBLE UTILITIES
+----------------------------------------------------------------------------- */
+
+@mixin visibility($visibility){
+	.#{$themePrefix}hidden-#{$visibility}{
+		display: none !important;
+	}
+	.#{$themePrefix}visible-#{$visibility}{
+		display: block !important;
+	}
+}
+
+.#{$themePrefix}hidden,
+%v-visible{
+	display: none !important;
+}
+@each $br-name, $br-value in $breakpoints{
+	.#{$themePrefix}visible-#{$br-name}{
+		@extend %v-visible;
+	}
+}
+@include min(lg){
+	@include visibility(lg);
+}
+@include min(md){
+	@include max(lg){
+		@include visibility(md);
+	}
+}
+@include min(sm){
+	@include max(md){
+		@include visibility(sm);
+	}
+}
+@include max(sm){
+	@include visibility(xs);
+}
+/* -----------------------------------------------------------------------------
+	HIDDEN AND VISIBLE UTILITIES
+----------------------------------------------------------------------------- */

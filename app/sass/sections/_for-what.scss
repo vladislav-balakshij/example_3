@@ -1,0 +1,19 @@
+@include b('for-what'){
+	position: relative;
+	@include padding-y(45px);
+	background-color: $color-brand-2;
+	text-align: center;
+	color: $color-white;
+	@include e('quadro'){
+		@include m('1'){
+			top: calc(100% - #{$quadro-size / 3});
+			left: 0;
+			@include min(md){
+				top: calc(100% - #{$quadro-size_md / 3});
+			}
+		}
+	}
+	@include e('title'){
+		margin-top: 0;
+	}
+}

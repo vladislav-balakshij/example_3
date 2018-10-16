@@ -1,0 +1,40 @@
+@include b('review'){
+	padding-bottom: 100px;
+	@include e('shadow'){
+		@include min(md){
+			padding-left: 60px;
+			padding-right: 60px;
+		}
+	}
+	&-item{
+		margin-bottom: 45px;
+		@include e('content'){
+			margin-bottom: 30px;
+			p{
+				&:not(:last-child){
+					margin-bottom: 15px;
+				}
+			}
+		}
+		@include e('info'){
+			font-family: 'FormularBold';
+		}
+		@include min(sm){
+			@include e('content'){
+				min-height: 300px;
+			}
+			@include e('footer'){
+				display: flex;
+				flex-flow: row-reverse wrap;
+				align-items: center;
+				justify-content: flex-start;
+			}
+			@include e('info'){
+				flex-grow: 1;
+				flex-basis: 0;
+				padding-right: 30px;
+				text-align: right;
+			}
+		}
+	}
+}
